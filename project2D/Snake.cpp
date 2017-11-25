@@ -4,37 +4,25 @@ Snake::Snake()
 {
 }
 
-float Snake::SnakePos(float X, float Y)
+void Snake::changeDirection(char key)
 {
-	mX = X;
-	mY = Y;
-	return 0;
+	switch (key) {
+	case '8':
+		if (direction != 2) direction = 0;
+		break;
+	case '2':
+		if (direction != 3) direction = 1;
+		break;
+	case '4':
+		if (direction != 4) direction = 2;
+		break;
+	case '6':
+		if (direction != 5) direction = 3;
+		break;
 }
 
-float Snake::MoveSnake(float X, float Y)
-{
-	Snake S1;
-	mX = X;
-	mY = Y;
-	//for (S1.SnakePos;mX=0;)
-	//{
-	//	S1.mX = mX + 5;
-	//	
-	//}
-	//return mX;
-	//for (S1.SnakePos; mY = 0;)
-	//{
-	//	S1.mY = mY + 5;
-	//}
-	//return mY;
-	return 1;
-}
-
-float Snake::NewPos(float X, float Y)
-{
-	Snake S1;
-	mX = X; mY = Y;
-	//S1.MoveSnake.SnakePos();
-	return mX&&mY;
 
 }
+
+
+
