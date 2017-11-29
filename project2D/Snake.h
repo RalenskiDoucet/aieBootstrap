@@ -1,15 +1,22 @@
 #pragma once
+#include<Vector2.h>
+#include<Vector3.h>
+#include<Vector4.h>
+#include<Matrix3.h>
+#include<Matrix4.h>
+#include<Matrixs2.h>
+#include<iostream>
+#include<math.h>
 class Snake
 {
 public:
 	Snake();
-	float mX;
-	float mY;
+	Vector2 mPos;
+	Snake(Vector2 pos);
 	int headxpos;
 	int headypos;
 	int direction;
 	// Moves snake head to new location
-	void move(int mX, int mY);
 	void changeDirection(char key);
 
 

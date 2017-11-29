@@ -1,7 +1,21 @@
 #include "Snake.h"
-
+#include<Vector2.h>
+#include<Vector3.h>
+#include<Vector4.h>
+#include<Matrix3.h>
+#include<Matrix4.h>
+#include<Matrixs2.h>
+#include<iostream>
+#include<math.h>
 Snake::Snake()
 {
+	
+}
+
+Snake::Snake(Vector2 pos)
+{
+	mPos.mX = pos.mX;
+	mPos.mY = pos.mY;
 }
 
 void Snake::changeDirection(char key)
@@ -23,6 +37,3 @@ void Snake::changeDirection(char key)
 
 
 }
-
-
-

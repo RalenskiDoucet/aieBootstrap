@@ -2,6 +2,15 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
+#include<Vector2.h>
+#include<Vector3.h>
+#include<Vector4.h>
+#include<Matrix3.h>
+#include<Matrix4.h>
+#include<Matrixs2.h>
+#include<iostream>
+#include<math.h>
+
 
 Application2D::Application2D() {
 
@@ -19,7 +28,10 @@ bool Application2D::startup() {
 	/*m_shipTexture = new aie::Texture("./textures/ship.png");*/
 
 	m_font = new aie::Font("./font/consolas.ttf", 32);
+	mSnake = new Snake(Vector2(5,5));
+
 	
+	mSnake->mPos.mY = 5;
 	m_cameraX = 0;
 	m_cameraY = 0;
 	m_timer = 0;
@@ -41,7 +53,11 @@ void Application2D::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
+	if (input->isKeyDown(aie::INPUT_KEY_UP))
 
+	if (input->isKeyDown(aie::INPUT_KEY_DOWN));
+	if (input->isKeyDown(aie::INPUT_KEY_LEFT));
+	if (input->isKeyDown(aie::INPUT_KEY_RIGHT));
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -93,4 +109,4 @@ void Application2D::draw() {
 
 	// done drawing sprites
 	m_2dRenderer->end();
-}
+ }
