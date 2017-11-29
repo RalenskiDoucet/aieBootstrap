@@ -53,11 +53,11 @@ void Application2D::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
-	if (input->isKeyDown(aie::INPUT_KEY_UP))
 
-	if (input->isKeyDown(aie::INPUT_KEY_DOWN));
-	if (input->isKeyDown(aie::INPUT_KEY_LEFT));
-	if (input->isKeyDown(aie::INPUT_KEY_RIGHT));
+	if (input->isKeyDown(aie::INPUT_KEY_UP));//to move up
+	if (input->isKeyDown(aie::INPUT_KEY_DOWN));// to move down
+	if (input->isKeyDown(aie::INPUT_KEY_LEFT));//to move left
+	if (input->isKeyDown(aie::INPUT_KEY_RIGHT));//to move right
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -83,6 +83,8 @@ void Application2D::draw() {
 	//m_2dRenderer->drawSprite(m_shipTexture, 600, 400, 0, 0, m_timer, 1);
 
 	// draw a thin line
+	m_2dRenderer->setRenderColour(1, 0, 1, 1);
+	m_2dRenderer->drawLine(640, 310, 643, 300, 30, 30);
 	m_2dRenderer->setRenderColour(1, 0, 0, 1);
 	m_2dRenderer->drawLine(0, 0, 1280, 0, 30, 30);
 	m_2dRenderer->drawLine(1280, 720,1280 , 0, 30, 1);

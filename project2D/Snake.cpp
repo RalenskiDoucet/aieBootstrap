@@ -9,10 +9,10 @@
 #include<math.h>
 Snake::Snake()
 {
-	
+	int mSnake;
 }
 
-Snake::Snake(Vector2 pos)
+Snake::SnakePos(Vector2 pos)
 {
 	mPos.mX = pos.mX;
 	mPos.mY = pos.mY;
@@ -36,4 +36,14 @@ void Snake::changeDirection(char key)
 }
 
 
+}
+
+void Snake::move(int Up, int Down, int Left, int Right)
+{
+	Snake Cobra;
+	Vector2 Postion;
+	direction = Up;		direction = Down;
+	direction = Left;	direction = Right;
+	Cobra.mPos=mSnake.
+	
 }

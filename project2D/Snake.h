@@ -10,14 +10,16 @@
 class Snake
 {
 public:
+	int mSnake;
 	Snake();
 	Vector2 mPos;
-	Snake(Vector2 pos);
+	SnakePos(Vector2 pos);
 	int headxpos;
 	int headypos;
 	int direction;
 	// Moves snake head to new location
 	void changeDirection(char key);
+	void move(int Up, int Down, int Left, int Right);
 
 
 };
