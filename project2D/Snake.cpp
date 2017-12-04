@@ -9,31 +9,36 @@
 #include<math.h>
 Snake::Snake()
 {
-	
+	int mSnake;
 }
 
 Snake::Snake(Vector2 pos)
 {
-	mPos.mX = pos.mX;
-	mPos.mY = pos.mY;
+	mPos = pos;
 }
 
-void Snake::changeDirection(char key)
+float Snake::SnakePos(Vector2 pos)
 {
-	switch (key) {
-	case '8':
-		if (direction != 2) direction = 0;
-		break;
-	case '2':
-		if (direction != 3) direction = 1;
-		break;
-	case '4':
-		if (direction != 4) direction = 2;
-		break;
-	case '6':
-		if (direction != 5) direction = 3;
-		break;
+	mPos.mX = pos.mX;
+	mPos.mY = pos.mY;
+	return mPos.mX&&mPos.mY;
 }
+
+
+void Snake::changeDirection(int Up, int Down, int Left, int Right)
+{
+	if (Up == 1)
+		mPos = mPos + Vector2(0, 50);
+	if (Down == 1)
+		mPos = mPos + Vector2(0, -50);
+	if (Left == 1)
+		mPos = mPos + Vector2(-50, 0);
+	if (Right == 1)
+		mPos = mPos + Vector2(50, 0);
+}
+
+void Snake::move(int Up, int Down, int Left, int Right)
+{
 
 
 }
