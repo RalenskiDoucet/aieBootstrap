@@ -21,7 +21,7 @@ Application2D::~Application2D() {
 }
 
 bool Application2D::startup() {
-	
+
 	m_2dRenderer = new aie::Renderer2D();
 
 	m_texture = new aie::Texture("./textures/numbered_grid.tga");
@@ -30,7 +30,7 @@ bool Application2D::startup() {
 	m_font = new aie::Font("./font/consolas.ttf", 32);
 	mSnake = new Snake(Vector2(5,5));
 
-	
+
 	mSnake->mPos.mY = 5;
 	m_cameraX = 0;
 	m_cameraY = 0;
@@ -40,7 +40,7 @@ bool Application2D::startup() {
 }
 
 void Application2D::shutdown() {
-	
+
 	delete m_font;
 	delete m_texture;
 	//delete m_shipTexture;
@@ -53,11 +53,15 @@ void Application2D::update(float deltaTime) {
 
 	// input example
 	aie::Input* input = aie::Input::getInstance();
-	if (input->isKeyDown(aie::INPUT_KEY_UP))
 
-	if (input->isKeyDown(aie::INPUT_KEY_DOWN));
-	if (input->isKeyDown(aie::INPUT_KEY_LEFT));
-	if (input->isKeyDown(aie::INPUT_KEY_RIGHT));
+	if (input->isKeyDown(aie::INPUT_KEY_UP))//to move up
+		mSnake->changeDirection(1, 0, 0, 0);
+	if (input->isKeyDown(aie::INPUT_KEY_DOWN))// to move down
+		mSnake->changeDirection(0, 1, 0, 0);
+	if (input->isKeyDown(aie::INPUT_KEY_LEFT))//to move left
+		mSnake->changeDirection(0, 0, 1, 0);
+	if (input->isKeyDown(aie::INPUT_KEY_RIGHT))//to move right
+		mSnake->changeDirection(0, 0, 0, 1);
 	// exit the application
 	if (input->isKeyDown(aie::INPUT_KEY_ESCAPE))
 		quit();
@@ -83,7 +87,11 @@ void Application2D::draw() {
 	//m_2dRenderer->drawSprite(m_shipTexture, 600, 400, 0, 0, m_timer, 1);
 
 	// draw a thin line
+	m_2dRenderer->setRenderColour(1, 0, 1, 1);
+	m_2dRenderer->drawBox(mSnake->mPos.mX, mSnake->mPos.mY, 1, 1);
 	m_2dRenderer->setRenderColour(1, 0, 0, 1);
+
+	//Borders
 	m_2dRenderer->drawLine(0, 0, 1280, 0, 30, 30);
 	m_2dRenderer->drawLine(1280, 720,1280 , 0, 30, 1);
 	m_2dRenderer->drawLine(1280, 720, 0, 720, 30, 1);
@@ -100,7 +108,7 @@ void Application2D::draw() {
 	//// draw a slightly rotated sprite with no texture, coloured yellow
 	m_2dRenderer->setRenderColour(1, 1, 0, 1);
 	m_2dRenderer->drawSprite(nullptr, 25, 25, 25, 25, 3.14159f * 0.25f, 1);
-	
+
 	// output some text, uses the last used colour
 	char fps[32];
 	sprintf_s(fps, 32, "FPS: %i", getFPS());

@@ -2,15 +2,14 @@
 class PlayingArea
 {
 public:
-	int mRows;
-	int mCols;
-	const int mapwidth = 20;
-	const int mapheight = 20;
-	int Grid(int Cols, int Rows);
-	float mX; float mY;
-	float snakePos(float x, float y);
-	int DrawGrid();
-	void generateFood();
+	int mRows;//Creates a varaible for the number of rows in  the game board.
+	int mCols;//Creates a varaible for the number of colmons in  the game board.
+	const int mapwidth = 1280;//sets a constant measurement for the width of the game board.
+	const int mapheight = 1280;//sets a constant measurement for the heigth of the game board.
+	int Grid(int Cols, int Rows);//a function that assigns that the grid is made of Colmons and Rows.
+	float snakePos(float x, float y);//a function that locates the snakes positon inside the game board and returns the position.
+	int DrawGrid();//a function that draws an ivisiable grid that is placed on the inside of the game board and sets bo
+
 
 
 };
