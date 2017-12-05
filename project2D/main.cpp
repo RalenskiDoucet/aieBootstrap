@@ -9,7 +9,7 @@
 #include<math.h>
 
 int main() {
-	
+
 	// allocation
 	auto app = new Application2D();
 

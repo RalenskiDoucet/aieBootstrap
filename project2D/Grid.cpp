@@ -15,12 +15,6 @@ int PlayingArea::Grid(int Cols, int Rows)
 	return Rows&&Cols;
 }
 
-float PlayingArea::snakePos(float x, float y)
-{
-	mX = x; mY = y;
-	return mX&&mY;
-}
-
 int PlayingArea::DrawGrid()
 {
 	PlayingArea mGrid;
@@ -29,6 +23,4 @@ int PlayingArea::DrawGrid()
 	return mGrid.mRows&&mCols;
 }
 
-void PlayingArea::generateFood()
-{
-}
+
